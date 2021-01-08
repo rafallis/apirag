@@ -13,6 +13,7 @@ public class MobRe implements Serializable {
     private String sprite;
     private String kName;
     private String iName;
+    private String bName;
     private Integer LV;
     private Integer HP;
     private Integer SP;
@@ -70,11 +71,12 @@ public class MobRe implements Serializable {
 
     public MobRe() {}
 
-    public MobRe(Long id, String sprite, String kName, String iName, Integer LV, Integer HP, Integer SP, Integer EXP, Integer JEXP, Integer range1, Integer atk1, Integer atk2, Integer def, Integer mdef, Integer str, Integer agi, Integer vit, Integer intel, Integer dex, Integer luk, Integer range2, Integer range3, Integer scale, Integer race, Integer element, Integer mode, Integer speed, Integer aDelay, Integer aMotion, Integer dMotion, Integer mExp, Integer mvp1id, Integer mvp1per, Integer mvp2id, Integer mvp2per, Integer mvp3id, Integer mvp3per, Integer drop1id, Integer drop1per, Integer drop2id, Integer drop2per, Integer drop3id, Integer drop3per, Integer drop4id, Integer drop4per, Integer drop5id, Integer drop5per, Integer drop6id, Integer drop6per, Integer drop7id, Integer drop7per, Integer drop8id, Integer drop8per, Integer drop9id, Integer drop9per, Integer dropCardId, Integer dropCardPer) {
+    public MobRe(Long id, String sprite, String kName, String iName, String bName, Integer LV, Integer HP, Integer SP, Integer EXP, Integer JEXP, Integer range1, Integer atk1, Integer atk2, Integer def, Integer mdef, Integer str, Integer agi, Integer vit, Integer intel, Integer dex, Integer luk, Integer range2, Integer range3, Integer scale, Integer race, Integer element, Integer mode, Integer speed, Integer aDelay, Integer aMotion, Integer dMotion, Integer mExp, Integer mvp1id, Integer mvp1per, Integer mvp2id, Integer mvp2per, Integer mvp3id, Integer mvp3per, Integer drop1id, Integer drop1per, Integer drop2id, Integer drop2per, Integer drop3id, Integer drop3per, Integer drop4id, Integer drop4per, Integer drop5id, Integer drop5per, Integer drop6id, Integer drop6per, Integer drop7id, Integer drop7per, Integer drop8id, Integer drop8per, Integer drop9id, Integer drop9per, Integer dropCardId, Integer dropCardPer) {
         this.id = id;
         this.sprite = sprite;
         this.kName = kName;
         this.iName = iName;
+        this.bName = bName;
         this.LV = LV;
         this.HP = HP;
         this.SP = SP;
@@ -145,6 +147,8 @@ public class MobRe implements Serializable {
     public String getiName() {
         return iName;
     }
+
+    public String getbName() { return bName; }
 
     public Integer getLV() {
         return LV;

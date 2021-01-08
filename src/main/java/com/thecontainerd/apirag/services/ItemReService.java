@@ -23,6 +23,11 @@ public class ItemReService {
         return obj.get();
     }
 
+    public List<ItemRe> findByNameBrazilianContaining(String name) {
+        List<ItemRe> list = repository.findByNameBrazilianContaining(name);
+        return list;
+    }
+
     public List<ItemRe> findByNameEnglishContaining(String name) {
         List<ItemRe> list = repository.findByNameEnglishContaining(name);
         return list;

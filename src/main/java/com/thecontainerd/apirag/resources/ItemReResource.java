@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api/itemre")
@@ -30,9 +32,17 @@ public class ItemReResource {
         return ResponseEntity.ok().body(obj);
     }
 
-    @GetMapping(value = "/name/{name}")
+    @GetMapping(value = "/ename/{name}")
     public ResponseEntity<List<ItemRe>> findByNameEnglishContaining(@PathVariable String name) {
         List<ItemRe> list = service.findByNameEnglishContaining(name);
         return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping(value = "/bname/{name}")
+    public ResponseEntity<Map<String, List>> findByNameBrazilianContaining(@PathVariable String name) {
+        List<ItemRe> list = service.findByNameBrazilianContaining(name);
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("data", list);
+        return ResponseEntity.ok().body(map);
     }
 }

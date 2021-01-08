@@ -17,6 +17,8 @@ public class ItemRe implements Serializable {
     private String nameEnglish;
     @Column(name = "name_japanese")
     private String nameJapanese;
+    @Column(name = "name_brazilian")
+    private String nameBrazilian;
     private Integer type;
     private Integer subtype;
     @Column(name = "price_buy")
@@ -56,10 +58,11 @@ public class ItemRe implements Serializable {
 
     public ItemRe(){}
 
-    public ItemRe(Long id, String name_english, String name_japanese, Integer type, Integer subtype, Integer price_buy, Integer price_sell, Integer weight, Integer atk, Integer matk, Integer defence, Integer range, Integer slots, BigInteger equip_jobs, Integer equip_upper, Integer equip_genders, Integer equip_locations, Integer weapon_level, Integer equip_level_min, Integer equip_level_max, Integer refineable, Integer disable_options, Integer view_sprite, Integer bindonequip, Integer forceserial, Integer buyingstore, Integer delay, Integer trade_flag, Integer trade_group, Integer nouse_flag, Integer nouse_group, Integer stack_amount, Integer stack_flag, Integer sprite) {
+    public ItemRe(Long id, String name_english, String name_japanese, String name_brazilian, Integer type, Integer subtype, Integer price_buy, Integer price_sell, Integer weight, Integer atk, Integer matk, Integer defence, Integer range, Integer slots, BigInteger equip_jobs, Integer equip_upper, Integer equip_genders, Integer equip_locations, Integer weapon_level, Integer equip_level_min, Integer equip_level_max, Integer refineable, Integer disable_options, Integer view_sprite, Integer bindonequip, Integer forceserial, Integer buyingstore, Integer delay, Integer trade_flag, Integer trade_group, Integer nouse_flag, Integer nouse_group, Integer stack_amount, Integer stack_flag, Integer sprite) {
         this.id = id;
         this.nameEnglish = name_english;
         this.nameJapanese = name_japanese;
+        this.nameBrazilian = name_brazilian;
         this.type = type;
         this.subtype = subtype;
         this.priceBuy = price_buy;
@@ -108,6 +111,8 @@ public class ItemRe implements Serializable {
     public String getName_japanese() {
         return nameJapanese;
     }
+
+    public String getName_brazilian() { return nameBrazilian; }
 
     public Integer getType() {
         return type;

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api/mobre")
@@ -19,9 +21,11 @@ public class MobReResource {
     private MobReService service;
 
     @GetMapping
-    public ResponseEntity<List<MobRe>> findAll() {
+    public ResponseEntity<Map<String, List>> findAll() {
         List<MobRe> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+        Map<String, List> map = new HashMap<>();
+        map.put("data", list);
+        return ResponseEntity.ok().body(map);
     }
 
     @GetMapping(value = "/{id}")
@@ -31,8 +35,10 @@ public class MobReResource {
     }
 
     @GetMapping(value = "/name/{name}")
-    public ResponseEntity<List<MobRe>> findByIName(@PathVariable String name) {
+    public ResponseEntity<Map<String, List>> findByIName(@PathVariable String name) {
         List<MobRe> list = service.findByIName(name);
-        return ResponseEntity.ok().body(list);
+        Map<String, List> map = new HashMap<>();
+        map.put("data", list);
+        return ResponseEntity.ok().body(map);
     }
 }

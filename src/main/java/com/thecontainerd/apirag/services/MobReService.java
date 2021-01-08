@@ -24,7 +24,7 @@ public class MobReService {
     }
 
     public List<MobRe> findByIName(String name) {
-        List<MobRe> list = repository.findByINameContaining(name);
+        List<MobRe> list = repository.findByiNameContaining(name);
         return list;
     }
 }
