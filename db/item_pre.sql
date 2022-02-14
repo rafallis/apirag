@@ -1,7 +1,7 @@
 -- This file is part of Hercules.
 -- http://herc.ws - http://github.com/HerculesWS/Hercules
 --
--- Copyright (C) 2013-2020 Hercules Dev Team
+-- Copyright (C) 2013-2022 Hercules Dev Team
 --
 -- Hercules is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -29,71 +29,70 @@
 
 DROP TABLE IF EXISTS `item_pre`;
 CREATE TABLE `item_pre` (
-  `id` int(11) UNSIGNED NOT NULL DEFAULT '0',
+  `id` int UNSIGNED NOT NULL DEFAULT '0',
   `name_english` varchar(50) NOT NULL DEFAULT '',
   `name_japanese` varchar(50) NOT NULL DEFAULT '',
-  `name_brazilian` varchar(50) NOT NULL DEFAULT '',
-  `type` tinyint(2) UNSIGNED NOT NULL DEFAULT '0',
-  `subtype` tinyint(2) UNSIGNED DEFAULT NULL,
-  `price_buy` mediumint(10) DEFAULT NULL,
-  `price_sell` mediumint(10) DEFAULT NULL,
-  `weight` smallint(5) UNSIGNED DEFAULT NULL,
-  `atk` smallint(5) UNSIGNED DEFAULT NULL,
-  `matk` smallint(5) UNSIGNED DEFAULT NULL,
-  `defence` smallint(5) UNSIGNED DEFAULT NULL,
-  `range` tinyint(2) UNSIGNED DEFAULT NULL,
-  `slots` tinyint(2) UNSIGNED DEFAULT NULL,
-  `equip_jobs` bigint(20) UNSIGNED DEFAULT NULL,
-  `equip_upper` tinyint(8) UNSIGNED DEFAULT NULL,
-  `equip_genders` tinyint(2) UNSIGNED DEFAULT NULL,
-  `equip_locations` mediumint(8) UNSIGNED DEFAULT NULL,
-  `weapon_level` tinyint(2) UNSIGNED DEFAULT NULL,
-  `equip_level_min` smallint(5) UNSIGNED DEFAULT NULL,
-  `equip_level_max` smallint(5) UNSIGNED DEFAULT NULL,
-  `refineable` tinyint(1) UNSIGNED DEFAULT NULL,
-  `disable_options` tinyint(1) UNSIGNED DEFAULT NULL,
-  `view_sprite` smallint(3) UNSIGNED DEFAULT NULL,
-  `bindonequip` tinyint(1) UNSIGNED DEFAULT NULL,
-  `forceserial` tinyint(1) UNSIGNED DEFAULT NULL,
-  `buyingstore` tinyint(1) UNSIGNED DEFAULT NULL,
-  `delay` mediumint(9) UNSIGNED DEFAULT NULL,
-  `trade_flag` smallint(4) UNSIGNED DEFAULT NULL,
-  `trade_group` smallint(3) UNSIGNED DEFAULT NULL,
-  `nouse_flag` smallint(4) UNSIGNED DEFAULT NULL,
-  `nouse_group` smallint(4) UNSIGNED DEFAULT NULL,
-  `stack_amount` mediumint(6) UNSIGNED DEFAULT NULL,
-  `stack_flag` tinyint(2) UNSIGNED DEFAULT NULL,
-  `sprite` mediumint(6) UNSIGNED DEFAULT NULL,
+  `type` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `subtype` tinyint UNSIGNED DEFAULT NULL,
+  `price_buy` mediumint DEFAULT NULL,
+  `price_sell` mediumint DEFAULT NULL,
+  `weight` smallint UNSIGNED DEFAULT NULL,
+  `atk` smallint UNSIGNED DEFAULT NULL,
+  `matk` smallint UNSIGNED DEFAULT NULL,
+  `defence` smallint UNSIGNED DEFAULT NULL,
+  `range` tinyint UNSIGNED DEFAULT NULL,
+  `slots` tinyint UNSIGNED DEFAULT NULL,
+  `equip_jobs` bigint UNSIGNED DEFAULT NULL,
+  `equip_upper` tinyint UNSIGNED DEFAULT NULL,
+  `equip_genders` tinyint UNSIGNED DEFAULT NULL,
+  `equip_locations` mediumint UNSIGNED DEFAULT NULL,
+  `weapon_level` tinyint UNSIGNED DEFAULT NULL,
+  `equip_level_min` smallint UNSIGNED DEFAULT NULL,
+  `equip_level_max` smallint UNSIGNED DEFAULT NULL,
+  `refineable` tinyint UNSIGNED DEFAULT NULL,
+  `disable_options` tinyint UNSIGNED DEFAULT NULL,
+  `view_sprite` smallint UNSIGNED DEFAULT NULL,
+  `bindonequip` tinyint UNSIGNED DEFAULT NULL,
+  `forceserial` tinyint UNSIGNED DEFAULT NULL,
+  `buyingstore` tinyint UNSIGNED DEFAULT NULL,
+  `delay` mediumint UNSIGNED DEFAULT NULL,
+  `trade_flag` smallint UNSIGNED DEFAULT NULL,
+  `trade_group` smallint UNSIGNED DEFAULT NULL,
+  `nouse_flag` smallint UNSIGNED DEFAULT NULL,
+  `nouse_group` smallint UNSIGNED DEFAULT NULL,
+  `stack_amount` mediumint UNSIGNED DEFAULT NULL,
+  `stack_flag` tinyint UNSIGNED DEFAULT NULL,
+  `sprite` mediumint UNSIGNED DEFAULT NULL,
   `script` text,
   `equip_script` text,
   `unequip_script` text,
  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
 
-REPLACE INTO `item_pre` VALUES ('501','Red_Potion','Red Potion','Pocao Vermelha','0','0','50','25','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(45,65),0;','','');
-REPLACE INTO `item_pre` VALUES ('502','Orange_Potion','Orange Potion','Pocao Laranja','0','0','200','100','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(105,145),0;','','');
-REPLACE INTO `item_pre` VALUES ('503','Yellow_Potion','Yellow Potion','Pocao Amarela','0','0','550','275','130','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(175,235),0;','','');
-REPLACE INTO `item_pre` VALUES ('504','White_Potion','White Potion','Pocao Branca','0','0','1200','600','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(325,405),0;','','');
-REPLACE INTO `item_pre` VALUES ('505','Blue_Potion','Blue Potion','Pocao Azul','0','0','5000','2500','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(40,60);','','');
-REPLACE INTO `item_pre` VALUES ('506','Green_Potion','Green Potion','Pocao Verde','0','0','40','20','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION;','','');
-REPLACE INTO `item_pre` VALUES ('507','Red_Herb','Red Herb','Erva Vermelha','0','0','18','9','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(18,28),0;','','');
-REPLACE INTO `item_pre` VALUES ('508','Yellow_Herb','Yellow Herb','Erva Amarela','0','0','40','20','50','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(38,58),0;','','');
-REPLACE INTO `item_pre` VALUES ('509','White_Herb','White Herb','Erva Branca','0','0','120','60','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(75,115),0;','','');
-REPLACE INTO `item_pre` VALUES ('510','Blue_Herb','Blue Herb','Erva Azul','0','0','60','30','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(15,30);','','');
-REPLACE INTO `item_pre` VALUES ('511','Green_Herb','Green Herb','Erva Verde','0','0','10','5','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON;','','');
-REPLACE INTO `item_pre` VALUES ('512','Apple','Apple','Maca','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(16,22),0;','','');
-REPLACE INTO `item_pre` VALUES ('513','Banana','Banana','Banana','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(17,21),0;','','');
-REPLACE INTO `item_pre` VALUES ('514','Grape','Grape','Uva','0','0','200','100','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(10,15);','','');
-REPLACE INTO `item_pre` VALUES ('515','Carrot','Carrot','Cenoura','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(18,20),0;','','');
-REPLACE INTO `item_pre` VALUES ('516','Sweet_Potato','Potato','Batata','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(15,23),0;','','');
-REPLACE INTO `item_pre` VALUES ('517','Meat','Meat','Carne','0','0','50','25','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(70,100),0;','','');
-REPLACE INTO `item_pre` VALUES ('518','Honey','Honey','Mel','0','0','500','250','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(70,100),rand(20,40);','','');
-REPLACE INTO `item_pre` VALUES ('519','Milk','Milk','Leite','0','0','25','12','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(27,37),0;','','');
-REPLACE INTO `item_pre` VALUES ('520','Leaflet_Of_Hinal','Hinalle Leaflet','Folha de Hinalle','0','0','150','75','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(175,235),0;','','');
-REPLACE INTO `item_pre` VALUES ('521','Leaflet_Of_Aloe','Aloe Leaflet','Folha de Aloe','0','0','360','180','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(325,405),0;','','');
-REPLACE INTO `item_pre` VALUES ('522','Fruit_Of_Mastela','Mastela Fruit','Mastela','0','0','8500','4250','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(400,600),0;','','');
-REPLACE INTO `item_pre` VALUES ('523','Holy_Water','Holy Water','Agua Benta','0','0','20','10','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_CURSE;','','');
-REPLACE INTO `item_pre` VALUES ('525','Panacea','Panacea','','0','0','500','250','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION; sc_end SC_CURSE; sc_end SC_ILLUSION;','','');
+REPLACE INTO `item_pre` VALUES ('501','Red_Potion','Red Potion','0','0','50','25','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(45,65),0;','','');
+REPLACE INTO `item_pre` VALUES ('502','Orange_Potion','Orange Potion','0','0','200','100','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(105,145),0;','','');
+REPLACE INTO `item_pre` VALUES ('503','Yellow_Potion','Yellow Potion','0','0','550','275','130','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(175,235),0;','','');
+REPLACE INTO `item_pre` VALUES ('504','White_Potion','White Potion','0','0','1200','600','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(325,405),0;','','');
+REPLACE INTO `item_pre` VALUES ('505','Blue_Potion','Blue Potion','0','0','5000','2500','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(40,60);','','');
+REPLACE INTO `item_pre` VALUES ('506','Green_Potion','Green Potion','0','0','40','20','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION;','','');
+REPLACE INTO `item_pre` VALUES ('507','Red_Herb','Red Herb','0','0','18','9','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(18,28),0;','','');
+REPLACE INTO `item_pre` VALUES ('508','Yellow_Herb','Yellow Herb','0','0','40','20','50','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(38,58),0;','','');
+REPLACE INTO `item_pre` VALUES ('509','White_Herb','White Herb','0','0','120','60','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(75,115),0;','','');
+REPLACE INTO `item_pre` VALUES ('510','Blue_Herb','Blue Herb','0','0','60','30','70','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(15,30);','','');
+REPLACE INTO `item_pre` VALUES ('511','Green_Herb','Green Herb','0','0','10','5','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON;','','');
+REPLACE INTO `item_pre` VALUES ('512','Apple','Apple','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(16,22),0;','','');
+REPLACE INTO `item_pre` VALUES ('513','Banana','Banana','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(17,21),0;','','');
+REPLACE INTO `item_pre` VALUES ('514','Grape','Grape','0','0','200','100','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal 0,rand(10,15);','','');
+REPLACE INTO `item_pre` VALUES ('515','Carrot','Carrot','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(18,20),0;','','');
+REPLACE INTO `item_pre` VALUES ('516','Sweet_Potato','Potato','0','0','15','7','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(15,23),0;','','');
+REPLACE INTO `item_pre` VALUES ('517','Meat','Meat','0','0','50','25','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(70,100),0;','','');
+REPLACE INTO `item_pre` VALUES ('518','Honey','Honey','0','0','500','250','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(70,100),rand(20,40);','','');
+REPLACE INTO `item_pre` VALUES ('519','Milk','Milk','0','0','25','12','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(27,37),0;','','');
+REPLACE INTO `item_pre` VALUES ('520','Leaflet_Of_Hinal','Hinalle Leaflet','0','0','150','75','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(175,235),0;','','');
+REPLACE INTO `item_pre` VALUES ('521','Leaflet_Of_Aloe','Aloe Leaflet','0','0','360','180','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(325,405),0;','','');
+REPLACE INTO `item_pre` VALUES ('522','Fruit_Of_Mastela','Mastela Fruit','0','0','8500','4250','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(400,600),0;','','');
+REPLACE INTO `item_pre` VALUES ('523','Holy_Water','Holy Water','0','0','20','10','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_CURSE;','','');
+REPLACE INTO `item_pre` VALUES ('525','Panacea','Panacea','0','0','500','250','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION; sc_end SC_CURSE; sc_end SC_ILLUSION;','','');
 REPLACE INTO `item_pre` VALUES ('526','Royal_Jelly','Royal Jelly','0','0','7000','3500','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(325,405),rand(40,60); sc_end SC_POISON; sc_end SC_SILENCE; sc_end SC_BLIND; sc_end SC_CONFUSION; sc_end SC_CURSE; sc_end SC_ILLUSION;','','');
 REPLACE INTO `item_pre` VALUES ('528','Monsters_Feed','Monster\'s Feed','0','0','60','30','150','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(72,108),0;','','');
 REPLACE INTO `item_pre` VALUES ('529','Candy','Candy','0','0','10','5','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','itemheal rand(45,65),0;','','');
@@ -210,7 +209,7 @@ REPLACE INTO `item_pre` VALUES ('642','Book_Of_Devil','Book of the Devil','2','0
 REPLACE INTO `item_pre` VALUES ('643','Pet_Incubator','Pet Incubator','2','0','3000','1500','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','bpet;','','');
 REPLACE INTO `item_pre` VALUES ('644','Gift_Box','Gift Box','2','0','1000','500','200','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','getrandgroupitem 644,1;','','');
 REPLACE INTO `item_pre` VALUES ('645','Center_Potion','Concentration Potion','2','0','800','400','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION1, 1800000, 0;','','');
-REPLACE INTO `item_pre` VALUES ('656','Awakening_Potion','Awakening Potion','2','0','1500','750','150','0','0','0','0','0','2145902319','63','2','0','0','40',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION2, 1800000, 0;','','');
+REPLACE INTO `item_pre` VALUES ('656','Awakening_Potion','Awakening Potion','2','0','1500','750','150','0','0','0','0','0','4293385967','63','2','0','0','40',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION2, 1800000, 0;','','');
 REPLACE INTO `item_pre` VALUES ('657','Berserk_Potion','Berserk Potion','2','0','3000','1500','200','0','0','0','0','0','31868582','63','2','0','0','85',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION3, 1800000, 0;','','');
 REPLACE INTO `item_pre` VALUES ('658','Union_Of_Tribe','Union of Tribe','2','0','2','1','500','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','guildgetexp rand(600000,1200000);','','');
 REPLACE INTO `item_pre` VALUES ('659','Heart_Of_Her','Her Heart','2','0','500','250','50','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'1',NULL,'0',NULL,'0','pet BON_GUN;','','');
@@ -3238,10 +3237,15 @@ REPLACE INTO `item_pre` VALUES ('6396','Auger_Of_Spirit','Auger Of Spirit','3','
 REPLACE INTO `item_pre` VALUES ('6413','New_Insurance','New Insurance','3','0','2','1','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6415','Strange_Embryo','Strange Embryo','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','507',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6493','Makibishi','Makibishi','3','0','30','15','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('6498','Jejellopy','Jejellopy','3','0','200','100','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('6507','Evil_Bone','Evil Spirit Bone','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','499',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('6510','Elegant_Flower','Elegant Flower','3','0','300','150','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6512','Charm_Fire','Charm Fire','3','0','100','50','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6513','Charm_Ice','Charm Ice','3','0','100','50','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6514','Charm_Wind','Charm Wind','3','0','100','50','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6515','Charm_Earth','Charm Earth','3','0','100','50','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('6520','Lost_Belongings','Lost Belongings','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','467',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('6542','Star_Shape_Mushroom','Star Shape Mushroom','3','0','20','10','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','467',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('6707','Cash_Hair_Coupon','Cash Hair Coupon','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7001','Mould_Powder','Mould Powder','3','0','466','233','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7002','Ogre_Tooth','Ogre Tooth','3','0','658','329','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -3755,7 +3759,7 @@ REPLACE INTO `item_pre` VALUES ('7510','Valhalla_Flower','Valhalla\'s Flower','3
 REPLACE INTO `item_pre` VALUES ('7511','Rune_Of_Darkness','Rune of Darkness','3','0','2526','1263','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7512','Burnt_Parts','Burnt Part','3','0','1600','800','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7513','Pocket_Watch','Pocket Watch','3','0','3420','1710','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
-REPLACE INTO `item_pre` VALUES ('7514','Monster_Ticket','Monster Ticket','3','0','2','1','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('7514','Monster_Ticket','Monster Ticket','3','0','2','1','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','499',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7515','Marvelous_Medal','Prize Medal','3','0','2','1','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','499',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7516','Green_Key_Card','Green Keycard','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','499',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7517','Gold_Coin_','Gold Coin','3','0','1000','500','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -3869,6 +3873,9 @@ REPLACE INTO `item_pre` VALUES ('7629','Pink_Gift_Box','Pink Gift Box','3','0','
 REPLACE INTO `item_pre` VALUES ('7630','Clean_Beach_Brush','Clean Beach Brush','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7631','Trash_Debris','Trash Debris','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7635','Perfume_Pouch','Sachet','3','0','100','50','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('7663','Fullmetal_Jacket_Bullet','Full Metal Jacket','10','3','200','100','2','10','0','0','0','0','1090519040','63','2','32768','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('7664','Mine_Projectile','Projection Landmines','10','5','450','225','3','10','0','0','0','0','1090519040','63','2','32768','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('7665','Dragon_Tail_Missile','Dragon Tail Missile','10','5','1500','750','100','10','0','0','0','0','1090519040','63','2','32768','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7701','Dragon_Spirit','Soul','3','0','2','1','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7702','Special_Cogwheel','Special Cogwheel','3','0','2','1','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('7703','Piece_Of_Cogwheel','Piece of Cogwheel','3','0','2','1','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -4510,7 +4517,7 @@ REPLACE INTO `item_pre` VALUES ('12132','Red_Bag','Santa\'s Bag','2','0','0','0'
 REPLACE INTO `item_pre` VALUES ('12133','Ice_Cream_','McDonald\'s Ice Cone','0','0','0','0','80','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','if (gettime(GETTIME_DAYOFMONTH) != MDiceCone) { MDiceCone = gettime(GETTIME_DAYOFMONTH); percentheal 50,50; }','','');
 REPLACE INTO `item_pre` VALUES ('12134','Red_Envelope','Red Envelope','2','0','1','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','Zeny += rand(1000,10000);','','');
 REPLACE INTO `item_pre` VALUES ('12135','Green_Ale','Green Ale','2','0','20','10','30','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','percentheal 50,50; sc_start SC_CONFUSION,10000,0,1000,SCFLAG_NONE;','','');
-REPLACE INTO `item_pre` VALUES ('12136','Womens_Bundle','Women\'s Bundle','2','0','0','0','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','getitem callfunc(\"F_RandMes\",4,558,529,2668,7518),1;','','');
+REPLACE INTO `item_pre` VALUES ('12136','Womens_Bundle','Women\'s Bundle','2','0','0','0','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','getitem callfunc(\"F_Rand\", 4, 558, 529, 2668, 7518), 1;','','');
 REPLACE INTO `item_pre` VALUES ('12137','1st_Stage_Prize','First Stage Prize','2','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('12138','2nd_Stage_Prize','Second Stage Prize','2','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('12139','3rd_Stage_Prize','Third Stage Prize','2','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -5238,6 +5245,8 @@ REPLACE INTO `item_pre` VALUES ('13204','Lighting_Sphere','Lightning Sphere','10
 REPLACE INTO `item_pre` VALUES ('13205','Poison_Sphere','Poison Sphere','10','5','80','40','5','50','0','0','0','0','16777216','63','2','32768','0','1',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','bonus bAtkEle,Ele_Poison; bonus2 bAddEff,Eff_Poison,500;','','');
 REPLACE INTO `item_pre` VALUES ('13206','Blind_Sphere','Blind Sphere','10','5','80','40','5','50','0','0','0','0','16777216','63','2','32768','0','1',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','bonus bAtkEle,Ele_Dark; bonus2 bAddEff,Eff_Blind,500;','','');
 REPLACE INTO `item_pre` VALUES ('13207','Freezing_Sphere','Freezing Sphere','10','5','80','40','5','50','0','0','0','0','16777216','63','2','32768','0','1',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','bonus bAtkEle,Ele_Water;','','');
+REPLACE INTO `item_pre` VALUES ('13220','Sanctified_Bullet','Purifying Bullet','10','3','10','5','2','40','0','0','0','0','1090519040','63','2','32768','0','100',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','bonus bAtkEle, Ele_Holy;','','');
+REPLACE INTO `item_pre` VALUES ('13221','Silver_Bullet_','Silver Bullet','10','3','5','2','2','15','0','0','0','0','1090519040','63','2','32768','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','bonus bAtkEle, Ele_Holy;','','');
 REPLACE INTO `item_pre` VALUES ('13250','Shuriken','Shuriken','10','6','4','2','5','10','0','0','0','0','33554432','63','2','32768','0','1',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('13251','Nimbus_Shuriken','Nimbus Shuriken','10','6','10','5','5','30','0','0','0','0','33554432','63','2','32768','0','20',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('13252','Flash_Shuriken','Flash Shuriken','10','6','20','10','5','45','0','0','0','0','33554432','63','2','32768','0','40',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -6129,7 +6138,7 @@ REPLACE INTO `item_pre` VALUES ('14469','Ox_Tail_Scroll','Ox Tail Egg','2','0','
 REPLACE INTO `item_pre` VALUES ('14500','Insurance60','Life Insurrance Certificate','2','0','2','1','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_CASH_DEATHPENALTY,3600000,0;','','');
 REPLACE INTO `item_pre` VALUES ('14508','Zeny_Scroll','Zeny Pet Egg Scroll','2','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','73',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('14509','Light_Center_Pot','Light Concentration Potion','2','0','800','400','20','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION1, 1800000, 0;','','');
-REPLACE INTO `item_pre` VALUES ('14510','Light_Awakening_Pot','Light Awakening Potion','2','0','1500','750','20','0','0','0','0','0','2145902319','63','2','0','0','40',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION2, 1800000, 0;','','');
+REPLACE INTO `item_pre` VALUES ('14510','Light_Awakening_Pot','Light Awakening Potion','2','0','1500','750','20','0','0','0','0','0','4293385967','63','2','0','0','40',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION2, 1800000, 0;','','');
 REPLACE INTO `item_pre` VALUES ('14511','Light_Berserk_Pot','Light Berserk Potion','2','0','3000','1500','20','0','0','0','0','0','31868582','63','2','0','0','85',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','sc_start SC_ATTHASTE_POTION3, 1800000, 0;','','');
 REPLACE INTO `item_pre` VALUES ('14512','Meteor_10_Scroll','Meteor Storm Scroll','2','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemskill WZ_METEOR,10;','','');
 REPLACE INTO `item_pre` VALUES ('14513','Storm_10_Scroll','Storm Gust Scroll','2','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','itemskill WZ_STORMGUST,10;','','');
@@ -6835,6 +6844,7 @@ REPLACE INTO `item_pre` VALUES ('24580','S_Banish_Cannon_Shoes','S_Banish_Cannon
 REPLACE INTO `item_pre` VALUES ('24581','S_Genesis_Weapon','S_Genesis_Weapon','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('24582','S_Genesis_Pendant','S_Genesis_Pendant','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('24583','S_Genesis_Earing','S_Genesis_Earing','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('25187','Slug_Bullet','Slug Bullet','3','0','1200','600','1200','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('25258','BrokenArrow','BrokenArrow','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('25265','Shining_Spore','Shining_Spore','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('25266','Dried_Leaf_Of_Ygg','Dried_Leaf_Of_Ygg','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
@@ -7362,3 +7372,11 @@ REPLACE INTO `item_pre` VALUES ('1000221','GuillcrossStone_Robe2','GuillcrossSto
 REPLACE INTO `item_pre` VALUES ('1000222','AssacrossStone_Top2','AssacrossStone_Top2','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('1000223','AssacrossStone_Middle2','AssacrossStone_Middle2','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
 REPLACE INTO `item_pre` VALUES ('1000224','AssacrossStone_Bottom2','AssacrossStone_Bottom2','3','0','0','0','0','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','0','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000321','Amber','Amber','3','0','0','0','100','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000322','Etel_Dust','Etel Dust','3','0','0','0','1','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000323','Etel_Stone','Etel Stone','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000325','Etel_Skyblue_Jewel','Etel Skyblue Jewel','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000326','Etel_Topaz','Etel Topaz','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000327','Etel_Violet_Jewel','Etel Violet Jewel','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000328','Etel_Amber','Etel Amber','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
+REPLACE INTO `item_pre` VALUES ('1000337','Blessed_Etel_Dust','Blessed Etel Dust','3','0','0','0','10','0','0','0','0','0','18446744073709551615','63','2','0','0','0',NULL,'0','1','0','0','0','1','0','0',NULL,'0',NULL,'0',NULL,'0','','','');
