@@ -1,1 +1,0 @@
-REPLACE INTO mob_re VALUES ()
